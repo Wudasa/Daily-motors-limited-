@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Daily Motors Ltd — Nairobi's Premier Luxury Dealership</title>
+  <meta name="description" content="Premium new and pre-owned vehicles. Daily Motors Ltd — Nairobi's most trusted luxury car dealership."/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar on-dark" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-emblem">
+      <img src="images/Logo.png" alt="Daily Motors logo" class="nav-logo-image" />
+    </div>
+    <div class="nav-logo-text">
+      <div class="brand">Daily Motors</div>
+      <div class="sub">— Est. 2016 —</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html" class="active">Home</a>
+    <a href="inventory.html">Inventory</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Book a Viewing</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">Home</a>
+  <a href="inventory.html">Inventory</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-video-wrap">
+    <video id="heroBgVideo" autoplay muted loop playsinline preload="auto"
+      poster="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=1600&q=80">
+      <source src="video/hero.mp4" type="video/mp4"/>
+    </video>
+    <div class="hero-video-overlay"></div>
+  </div>
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="eyebrow-rule"></div>
+      <span class="eyebrow-text">Nairobi's Premier Dealership</span>
+    </div>
+    <h1>The Art of<br><em>Fine</em><br>Motoring.</h1>
+    <p class="hero-desc">Curated premium vehicles for discerning clients. Transparent pricing, uncompromising quality, and a buying experience unlike any other.</p>
+    <div class="hero-actions">
+      <a href="inventory.html" class="btn-primary">Explore Collection</a>
+      <a href="about.html" class="btn-secondary">Our Story</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <div class="hero-stat-num"><span data-count="120" data-suffix="">0</span><span style="color:var(--gold)">+</span></div>
+      <div class="hero-stat-label">Vehicles in Collection</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num"><span data-count="500" data-suffix="">0</span><span style="color:var(--gold)">+</span></div>
+      <div class="hero-stat-label">Satisfied Clients</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num"><span data-count="8" data-suffix="">0</span><span style="color:var(--gold)"> Yrs</span></div>
+      <div class="hero-stat-label">Of Trusted Service</div>
+    </div>
+    <div class="hero-stat">
+      <div class="hero-stat-num"><span style="color:var(--gold)">98</span>%</div>
+      <div class="hero-stat-label">Client Satisfaction</div>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="scroll-label">Discover</span>
+    <div class="scroll-track"><div class="scroll-thumb"></div></div>
+  </div>
+
+  <div class="hero-video-controls">
+    <button class="vid-btn" id="vidPauseBtn" title="Pause" onclick="toggleHeroVideo()">
+      <svg id="vidIcon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+        <rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>
+      </svg>
+    </button>
+    <button class="vid-btn" title="Unmute" onclick="toggleHeroMute()">
+      <svg id="muteIcon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>
+      </svg>
+    </button>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-section">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-gem"></span>Toyota<span class="marquee-gem"></span>Mazda<span class="marquee-gem"></span>Subaru<span class="marquee-gem"></span>Honda<span class="marquee-gem"></span>Nissan<span class="marquee-gem"></span>Mercedes-Benz<span class="marquee-gem"></span>Mitsubishi<span class="marquee-gem"></span>Ford<span class="marquee-gem"></span>Volkswagen<span class="marquee-gem"></span>Premium Automobiles<span class="marquee-gem"></span>Nairobi Kenya<span class="marquee-gem"></span>Transparent Pricing<span class="marquee-gem"></span>Quality Assured<span class="marquee-gem"></span></span>
+    <span class="marquee-item"><span class="marquee-gem"></span>Toyota<span class="marquee-gem"></span>Mazda<span class="marquee-gem"></span>Subaru<span class="marquee-gem"></span>Honda<span class="marquee-gem"></span>Nissan<span class="marquee-gem"></span>Mercedes-Benz<span class="marquee-gem"></span>Mitsubishi<span class="marquee-gem"></span>Ford<span class="marquee-gem"></span>Volkswagen<span class="marquee-gem"></span>Premium Automobiles<span class="marquee-gem"></span>Nairobi Kenya<span class="marquee-gem"></span>Transparent Pricing<span class="marquee-gem"></span>Quality Assured<span class="marquee-gem"></span></span>
+  </div>
+</div>
+
+<!-- FEATURED COLLECTION -->
+<section class="section section-light" style="padding-top:5rem;">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem;">
+    <div>
+      <div class="section-label reveal">
+        <div class="section-rule"></div>
+        <span>Curated Selection</span>
+      </div>
+      <h2 class="section-title reveal">Featured <em>Collection</em></h2>
+      <p class="section-sub reveal">Every vehicle is hand-selected, thoroughly inspected, and priced with full transparency.</p>
+    </div>
+    <a href="inventory.html" class="btn-outline-burg reveal" style="flex-shrink:0;">View All Vehicles</a>
+  </div>
+
+  <div class="filter-bar reveal" id="filterBar">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="suv">SUV</button>
+    <button class="filter-chip" data-filter="sedan">Sedan</button>
+    <button class="filter-chip" data-filter="pickup">Pickup</button>
+    <button class="filter-chip" data-filter="hatchback">Hatchback</button>
+    <button class="filter-chip" data-filter-cond="new">New Arrivals</button>
+  </div>
+
+  <div class="cars-grid" id="carsGrid"></div>
+</section>
+
+<!-- WHY DAILY MOTORS — dark strip -->
+<section class="experience-section">
+  <div class="exp-left reveal">
+    <div class="exp-ghost-num">8</div>
+    <h2>Why Kenya<br>Trusts <em>Us</em></h2>
+    <p>Since 2016, Daily Motors Ltd has set the standard for premium car buying in Nairobi. We believe the experience of acquiring a fine vehicle should be as refined as the vehicle itself.</p>
+    <a href="about.html" class="btn-secondary">Discover Our Story</a>
+  </div>
+  <div class="exp-grid">
+    <div class="exp-item reveal reveal-delay-1">
+      <div class="exp-item-num" data-count="500" data-suffix="+">0+</div>
+      <div class="exp-item-label">Vehicles Sold</div>
+    </div>
+    <div class="exp-item reveal reveal-delay-2">
+      <div class="exp-item-num" data-count="120" data-suffix="+">0+</div>
+      <div class="exp-item-label">Currently In Stock</div>
+    </div>
+    <div class="exp-item reveal reveal-delay-3">
+      <div class="exp-item-num" data-count="98" data-suffix="%">0%</div>
+      <div class="exp-item-label">Satisfaction Rate</div>
+    </div>
+    <div class="exp-item reveal reveal-delay-4">
+      <div class="exp-item-num" data-count="12" data-suffix="">0</div>
+      <div class="exp-item-label">Premium Brands</div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS -->
+<section class="brands-section">
+  <div style="text-align:center;">
+    <div class="section-label reveal" style="justify-content:center;">
+      <div class="section-rule"></div>
+      <span>Brands We Carry</span>
+      <div class="section-rule"></div>
+    </div>
+  </div>
+  <div class="brands-row">
+    <span class="brand-item reveal reveal-delay-1">Toyota</span>
+    <span class="brand-item reveal reveal-delay-2">Mazda</span>
+    <span class="brand-item reveal reveal-delay-3">Subaru</span>
+    <span class="brand-item reveal reveal-delay-1">Honda</span>
+    <span class="brand-item reveal reveal-delay-2">Nissan</span>
+    <span class="brand-item reveal reveal-delay-3">Mercedes</span>
+    <span class="brand-item reveal reveal-delay-1">Ford</span>
+    <span class="brand-item reveal reveal-delay-2">Volkswagen</span>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section section-warm">
+  <div class="section-label reveal">
+    <div class="section-rule"></div>
+    <span>Client Voices</span>
+  </div>
+  <h2 class="section-title reveal">What Our Clients <em>Say</em></h2>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal reveal-delay-1">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">The team was remarkably transparent. I received full vehicle history, a thorough inspection report, and got an exceptional deal on my Prado. This is how car buying should be.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">JM</div>
+        <div>
+          <div class="author-name">James Mwangi</div>
+          <div class="author-loc">Westlands, Nairobi</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-2">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">My first car purchase, and Daily Motors made it effortless. The financing options were tailored perfectly to my situation. I drove off with confidence and zero hidden fees.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">AK</div>
+        <div>
+          <div class="author-name">Amina Kariuki</div>
+          <div class="author-loc">Karen, Nairobi</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card reveal reveal-delay-3">
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">Professional, knowledgeable, and genuinely honest. The staff knew every detail of each vehicle. My CX-5 was delivered exactly as described. Exceptional standard of service.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">PN</div>
+        <div>
+          <div class="author-name">Peter Ndungu</div>
+          <div class="author-loc">Kilimani, Nairobi</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="gold-rule"></div>
+  <h2>Begin Your<br><em>Journey</em> Today.</h2>
+  <p>Visit our showroom or reach out — our team is ready to assist you.</p>
+  <div class="cta-btns">
+    <button class="btn-cta-white" data-modal="enquiry">Make an Enquiry</button>
+    <a href="inventory.html" class="btn-cta-outline">View Collection</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-brand-name">DAILY MOTORS</div>
+      <div class="footer-brand-sub">— Ltd —</div>
+      <div class="footer-gold-rule"></div>
+      <p>Nairobi's trusted destination for premium new and pre-owned vehicles since 2016. Quality, transparency, and an exceptional buying experience — every time.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" title="Facebook">f</a>
+        <a href="#" class="social-link" title="Instagram">ig</a>
+        <a href="#" class="social-link" title="WhatsApp">w</a>
+        <a href="#" class="social-link" title="X">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Collection</h4>
+      <ul>
+        <li><a href="inventory.html">All Vehicles</a></li>
+        <li><a href="inventory.html?type=suv">SUVs</a></li>
+        <li><a href="inventory.html?type=sedan">Sedans</a></li>
+        <li><a href="inventory.html?type=pickup">Pickups</a></li>
+        <li><a href="inventory.html?type=hatchback">Hatchbacks</a></li>
+        <li><a href="inventory.html?condition=new">New Arrivals</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="about.html#team">Our Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="contact.html#financing">Financing</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Get In Touch</h4>
+      <ul>
+        <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+        <li><a href="mailto:info@dailymotors.co.ke">info@dailymotors.co.ke</a></li>
+        <li><a href="contact.html">Ngong Road, Nairobi</a></li>
+        <li><a>Mon–Sat: 8 AM – 6 PM</a></li>
+        <li><a>Sun: 10 AM – 3 PM</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Daily Motors Ltd. All rights reserved.</p>
+    <div class="footer-bottom-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('enquiryModal').classList.remove('open')">✕</button>
+    <div class="modal-top-rule"></div>
+    <h2>Begin Your Enquiry</h2>
+    <p>Our team will respond within 24 hours.</p>
+    <form>
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" placeholder="Jane" required/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" placeholder="Mwangi" required/></div>
+      </div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" placeholder="+254 7XX XXX XXX" required/></div>
+      <div class="form-group"><label>Interested In</label>
+        <select>
+          <option value="">Any Vehicle</option>
+          <option>Toyota Land Cruiser Prado</option>
+          <option>Mazda CX-5</option>
+          <option>Toyota Hilux</option>
+          <option>Honda Fit</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea placeholder="Tell us what you're looking for..."></textarea></div>
+      <button type="submit" class="btn-primary form-submit">Send Enquiry</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  function toggleHeroVideo() {
+    const v = document.getElementById('heroBgVideo');
+    const icon = document.getElementById('vidIcon');
+    if (v.paused) {
+      v.play();
+      icon.innerHTML = '<rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/>';
+    } else {
+      v.pause();
+      icon.innerHTML = '<polygon points="5 3 19 12 5 21 5 3"/>';
+    }
+  }
+  function toggleHeroMute() {
+    const v = document.getElementById('heroBgVideo');
+    const icon = document.getElementById('muteIcon');
+    v.muted = !v.muted;
+    icon.innerHTML = v.muted
+      ? `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/>`
+      : `<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"/>`;
+  }
+
+  function renderHome(filter) {
+    let cars = [...carsData];
+    if (filter === 'new')      cars = cars.filter(c => c.condition === 'new');
+    else if (filter !== 'all') cars = cars.filter(c => c.type === filter);
+    renderCars(cars.slice(0, 6), 'carsGrid', 'car-detail.html');
+  }
+
+  document.querySelectorAll('.filter-chip').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      renderHome(this.dataset.filterCond || this.dataset.filter);
+    });
+  });
+
+  renderHome('all');
+</script>
+</body>
+</html>

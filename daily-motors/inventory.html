@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inventory — Daily Motors Ltd</title>
+  <meta name="description" content="Browse all available vehicles at Daily Motors Ltd, Nairobi."/>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar on-dark" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <img src="images/Logo.png" alt="Daily Motors logo" class="nav-logo-image" />
+    </div>
+    <div class="nav-logo-text">
+      <div class="brand">Daily Motors</div>
+      <div class="sub">— LTD —</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="inventory.html" class="active">Inventory</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Book Test Drive</a>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">×</button>
+  <a href="index.html">Home</a>
+  <a href="inventory.html">Inventory</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-grid"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <span class="current">Collection</span>
+    </div>
+    <h1>Our <em>Collection</em></h1>
+  </div>
+</section>
+
+<!-- INVENTORY -->
+<section class="inventory-section">
+  <div class="inventory-toolbar">
+    <div class="search-box">
+      <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input type="text" id="searchInput" placeholder="Search make, model, year..."/>
+    </div>
+    <div class="filter-controls">
+      <select class="filter-select" id="typeFilter">
+        <option value="">All Types</option>
+        <option value="suv">SUV</option>
+        <option value="sedan">Sedan</option>
+        <option value="pickup">Pickup</option>
+        <option value="hatchback">Hatchback</option>
+      </select>
+      <select class="filter-select" id="condFilter">
+        <option value="">All Conditions</option>
+        <option value="new">New</option>
+        <option value="used">Used</option>
+      </select>
+      <select class="filter-select" id="fuelFilter">
+        <option value="">All Fuels</option>
+        <option value="Petrol">Petrol</option>
+        <option value="Diesel">Diesel</option>
+        <option value="Hybrid">Hybrid</option>
+      </select>
+      <select class="filter-select" id="sortFilter">
+        <option value="default">Sort: Default</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="year-desc">Year: Newest</option>
+        <option value="mileage-asc">Mileage: Lowest</option>
+      </select>
+    </div>
+    <div class="results-count"><span id="countNum">12</span> vehicles found</div>
+  </div>
+
+  <!-- Filter chips -->
+  <div class="filter-bar" id="filterBar" style="margin-bottom:2rem;">
+    <button class="filter-chip active" data-filter="all">All</button>
+    <button class="filter-chip" data-filter="suv">SUV</button>
+    <button class="filter-chip" data-filter="sedan">Sedan</button>
+    <button class="filter-chip" data-filter="pickup">Pickup</button>
+    <button class="filter-chip" data-filter="hatchback">Hatchback</button>
+    <button class="filter-chip" data-filter-cond="new">New Only</button>
+  </div>
+
+  <div class="inventory-grid" id="inventoryGrid"></div>
+
+  <div id="noResults" style="display:none; text-align:center; padding:4rem 0; color:var(--silver);">
+    <div style="font-family:var(--font-display); font-size:48px; color:rgba(255,255,255,0.05); margin-bottom:1rem;">NO RESULTS</div>
+    <p style="font-size:16px;">No vehicles match your search. Try adjusting your filters.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="gold-rule"></div>
+  <h2>Can't Find<br>What You <em>Need?</em></h2>
+  <p>Tell us exactly what you're looking for and we'll source it for you.</p>
+  <div class="cta-btns">
+    <button class="btn-cta-white" data-modal="enquiry">Make a Request</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text">DAILY MOTORS</div>
+      <div class="logo-sub">— LTD —</div>
+      <p>Nairobi's trusted destination for premium new and pre-owned vehicles since 2016.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">f</a>
+        <a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">w</a>
+        <a href="#" class="social-link">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Inventory</h4><ul>
+      <li><a href="inventory.html">All Vehicles</a></li>
+      <li><a href="inventory.html">SUVs</a></li>
+      <li><a href="inventory.html">Sedans</a></li>
+      <li><a href="inventory.html">Pickups</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+      <li><a href="mailto:info@dailymotors.co.ke">info@dailymotors.co.ke</a></li>
+      <li><a>Ngong Road, Nairobi</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Daily Motors Ltd. All rights reserved.</p>
+    <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('enquiryModal').classList.remove('open')">×</button>
+    <h2>Vehicle Request</h2>
+    <p>Tell us what you're looking for and we'll find it.</p>
+    <form>
+      <div class="form-row">
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name" required/></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+254 7XX XXX XXX" required/></div>
+      </div>
+      <div class="form-group"><label>Vehicle You Want</label><input type="text" placeholder="e.g. Toyota Fortuner 2022"/></div>
+      <div class="form-group"><label>Budget (KES)</label><input type="text" placeholder="e.g. 4,000,000"/></div>
+      <div class="form-group"><label>Additional Details</label><textarea placeholder="Preferred colour, specs, etc."></textarea></div>
+      <button type="submit" class="btn-primary form-submit">Submit Request</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+let activeTypeFilter = 'all';
+
+function getFiltered() {
+  const search = document.getElementById('searchInput').value.toLowerCase().trim();
+  const type   = document.getElementById('typeFilter').value;
+  const cond   = document.getElementById('condFilter').value;
+  const fuel   = document.getElementById('fuelFilter').value;
+  const sort   = document.getElementById('sortFilter').value;
+
+  // Spread into a fresh array first so sort never mutates the source data
+  let cars = [...carsData].filter(c => {
+    const matchSearch = !search ||
+      c.make.toLowerCase().includes(search)  ||
+      c.model.toLowerCase().includes(search) ||
+      String(c.year).includes(search)        ||
+      c.fuel.toLowerCase().includes(search)  ||
+      c.type.toLowerCase().includes(search);
+
+    // Clean two-level type check: chip filter AND dropdown filter, both must pass
+    const matchChip = activeTypeFilter === 'all'      ? true
+                    : activeTypeFilter === 'new-only'  ? c.condition === 'new'
+                    : c.type === activeTypeFilter;
+
+    const matchType = !type || c.type === type;
+    const matchCond = !cond || c.condition === cond;
+    const matchFuel = !fuel || c.fuel === fuel;
+
+    return matchSearch && matchChip && matchType && matchCond && matchFuel;
+  });
+
+  if      (sort === 'price-asc')    cars.sort((a, b) => a.price   - b.price);
+  else if (sort === 'price-desc')   cars.sort((a, b) => b.price   - a.price);
+  else if (sort === 'year-desc')    cars.sort((a, b) => b.year    - a.year);
+  else if (sort === 'mileage-asc')  cars.sort((a, b) => a.mileage - b.mileage);
+
+  return cars;
+}
+
+function renderInventory() {
+  const cars  = getFiltered();
+  const grid  = document.getElementById('inventoryGrid');
+  const noR   = document.getElementById('noResults');
+  const query = document.getElementById('searchInput').value.trim();
+
+  document.getElementById('countNum').textContent = cars.length;
+
+  if (cars.length === 0) {
+    grid.innerHTML = '';
+    noR.style.display = 'block';
+    // Helpful suggestions in the empty state
+    noR.innerHTML = `
+      <div style="font-family:var(--font-display);font-size:48px;color:rgba(255,255,255,0.05);margin-bottom:1rem;">NO RESULTS</div>
+      <p style="font-size:16px;color:var(--silver);">No vehicles match your current filters.</p>
+      <p style="font-size:14px;color:rgba(255,255,255,0.3);margin-top:8px;">
+        Try searching <em>"Toyota"</em>, <em>"SUV"</em>, or a year like <em>"2022"</em> — or clear your filters below.
+      </p>
+      <button onclick="resetFilters()" style="margin-top:1.5rem;background:var(--burgundy);color:#fff;border:none;padding:12px 32px;border-radius:50px;font-family:var(--font-sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;cursor:pointer;">
+        Clear All Filters
+      </button>`;
+  } else {
+    noR.style.display = 'none';
+    // Batch render — single innerHTML write is much faster than appending one-by-one
+    renderCars(cars, 'inventoryGrid', 'car-detail.html');
+  }
+}
+
+function resetFilters() {
+  activeTypeFilter = 'all';
+  document.getElementById('searchInput').value  = '';
+  document.getElementById('typeFilter').value   = '';
+  document.getElementById('condFilter').value   = '';
+  document.getElementById('fuelFilter').value   = '';
+  document.getElementById('sortFilter').value   = 'default';
+  document.querySelectorAll('.filter-chip').forEach((b, i) => b.classList.toggle('active', i === 0));
+  renderInventory();
+}
+
+// Debounced search — smooth typing, no lag on each keystroke
+document.getElementById('searchInput').addEventListener('input', debounce(renderInventory, 300));
+
+// Instant response for dropdowns and sort (no debounce needed)
+['typeFilter','condFilter','fuelFilter','sortFilter'].forEach(id => {
+  document.getElementById(id).addEventListener('change', renderInventory);
+});
+
+// Chip filter buttons
+document.querySelectorAll('.filter-chip').forEach(btn => {
+  btn.addEventListener('click', function () {
+    document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+    this.classList.add('active');
+    activeTypeFilter = this.dataset.filterCond === 'new'
+      ? 'new-only'
+      : (this.dataset.filter || 'all');
+    renderInventory();
+  });
+});
+
+// Respect URL params so links from homepage work (e.g. inventory.html?type=suv)
+const params = new URLSearchParams(window.location.search);
+if (params.get('type')) {
+  activeTypeFilter = params.get('type');
+  document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+  document.querySelector(`.filter-chip[data-filter="${params.get('type')}"]`)?.classList.add('active');
+}
+if (params.get('condition') === 'new') {
+  activeTypeFilter = 'new-only';
+  document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+  document.querySelector('.filter-chip[data-filter-cond="new"]')?.classList.add('active');
+}
+
+renderInventory();
+</script>
+</body>
+</html>

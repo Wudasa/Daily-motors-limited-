@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vehicle Details — Daily Motors Ltd</title>
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<nav class="navbar on-dark" id="navbar">
+  <a href="index.html" class="nav-logo">
+    <div class="nav-logo-icon">
+      <img src="images/Logo.png" alt="Daily Motors logo" class="nav-logo-image" />
+    </div>
+    <div class="nav-logo-text">
+      <div class="brand">Daily Motors</div>
+      <div class="sub">— LTD —</div>
+    </div>
+  </a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="inventory.html" class="active">Inventory</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+  <a href="contact.html" class="nav-cta">Book Test Drive</a>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" id="mobileClose">×</button>
+  <a href="index.html">Home</a>
+  <a href="inventory.html">Inventory</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<section class="car-detail-section" style="padding-top: 100px;">
+  <div style="padding: 0 0 2rem;">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>/</span>
+      <a href="inventory.html">Inventory</a>
+      <span>/</span>
+      <span class="current" id="breadcrumbName">Vehicle</span>
+    </div>
+  </div>
+
+  <div class="car-detail-layout" id="carDetailLayout">
+    <!-- Loaded by JS -->
+  </div>
+
+  <!-- Related Cars -->
+  <div style="margin-top: 5rem;">
+    <div class="section-eyebrow" style="margin-bottom:1rem;">
+      <div class="eyebrow-line"></div>
+      <span>You May Also Like</span>
+    </div>
+    <h2 class="section-title" style="font-size:36px; margin-bottom:2rem;">SIMILAR <span class="outline">VEHICLES</span></h2>
+    <div class="cars-grid" id="relatedGrid" style="grid-template-columns: repeat(3,1fr);"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="gold-rule"></div>
+  <h2>Interested in<br><em>This Vehicle?</em></h2>
+  <p>Book a private viewing or make an enquiry today.</p>
+  <div class="cta-btns">
+    <button class="btn-cta-white" data-modal="enquiry">Enquire Now</button>
+    <a href="inventory.html" class="btn-cta-outline">Back to Collection</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="logo-text">DAILY MOTORS</div>
+      <div class="logo-sub">— LTD —</div>
+      <p>Nairobi's trusted destination for premium vehicles since 2016.</p>
+      <div class="social-links">
+        <a href="#" class="social-link">f</a>
+        <a href="#" class="social-link">in</a>
+        <a href="#" class="social-link">w</a>
+        <a href="#" class="social-link">𝕏</a>
+      </div>
+    </div>
+    <div class="footer-col"><h4>Inventory</h4><ul>
+      <li><a href="inventory.html">All Vehicles</a></li>
+      <li><a href="inventory.html">SUVs</a></li>
+      <li><a href="inventory.html">Sedans</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:+254700000000">+254 700 000 000</a></li>
+      <li><a href="mailto:info@dailymotors.co.ke">info@dailymotors.co.ke</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Daily Motors Ltd. All rights reserved.</p>
+    <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="enquiryModal">
+  <div class="modal">
+    <button class="modal-close" onclick="document.getElementById('enquiryModal').classList.remove('open')">×</button>
+    <h2>Enquire About<br>This Vehicle</h2>
+    <p>We'll contact you within 24 hours.</p>
+    <form>
+      <div class="form-row">
+        <div class="form-group"><label>Name</label><input type="text" placeholder="Your name" required/></div>
+        <div class="form-group"><label>Phone</label><input type="tel" placeholder="+254 7XX XXX XXX" required/></div>
+      </div>
+      <div class="form-group"><label>Message</label><textarea placeholder="I'm interested in this vehicle..."></textarea></div>
+      <button type="submit" class="btn-primary form-submit">Send Enquiry</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+const features = [
+  'Air Conditioning', 'Power Steering', 'ABS Brakes', 'Airbags',
+  'Bluetooth Audio', 'Backup Camera', 'Cruise Control', 'Alloy Wheels',
+  'Keyless Entry', 'Push Start', 'Navigation System', 'Sunroof'
+];
+
+function largeCarSVG(color) {
+  return `
+    <svg viewBox="0 0 600 260" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;">
+      <defs>
+        <radialGradient id="groundGlowD" cx="50%" cy="100%" r="50%">
+          <stop offset="0%" stop-color="${color}" stop-opacity="0.25"/>
+          <stop offset="100%" stop-color="${color}" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="300" cy="235" rx="270" ry="20" fill="url(#groundGlowD)"/>
+      <ellipse cx="300" cy="232" rx="220" ry="12" fill="rgba(0,0,0,0.4)"/>
+      <rect x="60" y="128" width="480" height="90" rx="14" fill="${color}"/>
+      <path d="M145 128 Q180 58 260 50 Q340 44 390 52 Q440 60 455 128Z" fill="${color}"/>
+      <path d="M149 128 Q182 63 260 56 Q338 50 386 57 Q434 65 451 128Z" fill="rgba(0,0,0,0.1)"/>
+      <rect x="168" y="66" width="86" height="54" rx="6" fill="rgba(160,220,255,0.28)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      <rect x="264" y="60" width="110" height="58" rx="6" fill="rgba(160,220,255,0.28)" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>
+      <line x1="257" y1="66" x2="257" y2="122" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+      <line x1="378" y1="128" x2="378" y2="218" stroke="rgba(0,0,0,0.2)" stroke-width="1.5"/>
+      <line x1="254" y1="128" x2="254" y2="218" stroke="rgba(0,0,0,0.2)" stroke-width="1.5"/>
+      <rect x="270" y="170" width="26" height="7" rx="3.5" fill="rgba(255,255,255,0.18)"/>
+      <rect x="392" y="170" width="26" height="7" rx="3.5" fill="rgba(255,255,255,0.18)"/>
+      <circle cx="164" cy="214" r="40" fill="#0d0d0d" stroke="#2a2a2a" stroke-width="2"/>
+      <circle cx="164" cy="214" r="28" fill="#1a1a1a"/>
+      <circle cx="164" cy="214" r="16" fill="#0d0d0d" stroke="rgba(204,34,0,0.5)" stroke-width="2"/>
+      <circle cx="164" cy="214" r="4" fill="${color}"/>
+      <line x1="164" y1="198" x2="164" y2="206" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <line x1="164" y1="222" x2="164" y2="230" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <line x1="148" y1="214" x2="156" y2="214" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <line x1="172" y1="214" x2="180" y2="214" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <circle cx="436" cy="214" r="40" fill="#0d0d0d" stroke="#2a2a2a" stroke-width="2"/>
+      <circle cx="436" cy="214" r="28" fill="#1a1a1a"/>
+      <circle cx="436" cy="214" r="16" fill="#0d0d0d" stroke="rgba(204,34,0,0.5)" stroke-width="2"/>
+      <circle cx="436" cy="214" r="4" fill="${color}"/>
+      <line x1="436" y1="198" x2="436" y2="206" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <line x1="436" y1="222" x2="436" y2="230" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <line x1="420" y1="214" x2="428" y2="214" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <line x1="444" y1="214" x2="452" y2="214" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+      <rect x="58" y="142" width="36" height="14" rx="4" fill="#f0c040" opacity="0.95"/>
+      <rect x="62" y="145" width="28" height="8" rx="2" fill="#fff8c0"/>
+      <rect x="506" y="142" width="36" height="14" rx="4" fill="#CC2200" opacity="0.9"/>
+      <rect x="510" y="145" width="28" height="8" rx="2" fill="#ff4422" opacity="0.6"/>
+      <rect x="60" y="160" width="24" height="34" rx="4" fill="#0d0d0d" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <line x1="60" y1="170" x2="84" y2="170" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <line x1="60" y1="180" x2="84" y2="180" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <line x1="60" y1="190" x2="84" y2="190" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+      <rect x="60" y="185" width="480" height="2.5" rx="1.25" fill="rgba(255,255,255,0.06)"/>
+    </svg>`;
+}
+
+function loadCarDetail() {
+  const params = new URLSearchParams(window.location.search);
+  const id = parseInt(params.get('id')) || 1;
+  const car = carsData.find(c => c.id === id) || carsData[0];
+
+  document.title = `${car.year} ${car.make} ${car.model} — Daily Motors Ltd`;
+  document.getElementById('breadcrumbName').textContent = car.model;
+
+  const shuffled = [...features].sort(() => 0.5 - Math.random()).slice(0, 8);
+
+  document.getElementById('carDetailLayout').innerHTML = `
+    <div class="car-gallery">
+      <div class="gallery-main">${car.image ? `<img src="images/${car.image}" alt="${car.year} ${car.make} ${car.model}" class="gallery-main-img" />` : largeCarSVG(car.color)}</div>
+      <div class="gallery-thumbs">
+        ${[0,1,2,3].map((i) => `
+          <div class="gallery-thumb ${i===0?'active':''}" onclick="document.querySelectorAll('.gallery-thumb').forEach(t=>t.classList.remove('active'));this.classList.add('active')">
+            ${car.image ? `<img src="images/${car.image}" alt="${car.year} ${car.make} ${car.model}" class="gallery-thumb-img" />` : `<svg viewBox="0 0 90 45" fill="none" style="width:80%;height:80%;">
+              <rect x="8" y="18" width="74" height="22" rx="4" fill="${[car.color, 'rgba(255,255,255,0.05)', 'rgba(255,255,255,0.03)', 'rgba(255,255,255,0.07)'][i]}"/>
+              <path d="M18 18 Q26 6 45 5 Q64 6 72 18Z" fill="${[car.color, 'rgba(255,255,255,0.05)', 'rgba(255,255,255,0.03)', 'rgba(255,255,255,0.07)'][i]}"/>
+              <circle cx="22" cy="38" r="7" fill="#1a1a1a"/>
+              <circle cx="68" cy="38" r="7" fill="#1a1a1a"/>
+            </svg>`}
+          </div>`).join('')}
+      </div>
+    </div>
+    <div class="car-detail-info">
+      <div class="detail-make">${car.make} · ${car.type.toUpperCase()}</div>
+      <div class="detail-name">${car.year}<br>${car.model}</div>
+      <div class="detail-price-wrap">
+        <div class="detail-price">${formatKES(car.price)}</div>
+        <div class="detail-price-sub">Negotiable · <span style="color:var(--red)">${car.condition === 'new' ? 'Brand New' : 'Pre-owned'}</span></div>
+      </div>
+      <div class="detail-specs-grid">
+        <div class="detail-spec"><div class="detail-spec-label">Year</div><div class="detail-spec-val">${car.year}</div></div>
+        <div class="detail-spec"><div class="detail-spec-label">Mileage</div><div class="detail-spec-val">${car.mileage.toLocaleString()} km</div></div>
+        <div class="detail-spec"><div class="detail-spec-label">Fuel Type</div><div class="detail-spec-val">${car.fuel}</div></div>
+        <div class="detail-spec"><div class="detail-spec-label">Transmission</div><div class="detail-spec-val">${car.transmission}</div></div>
+        <div class="detail-spec"><div class="detail-spec-label">Engine</div><div class="detail-spec-val">${car.engine}</div></div>
+        <div class="detail-spec"><div class="detail-spec-label">Seats</div><div class="detail-spec-val">${car.seats} Seats</div></div>
+        <div class="detail-spec"><div class="detail-spec-label">Body Type</div><div class="detail-spec-val">${car.type.charAt(0).toUpperCase()+car.type.slice(1)}</div></div>
+        <div class="detail-spec"><div class="detail-spec-label">Condition</div><div class="detail-spec-val" style="color:var(--red)">${car.condition === 'new' ? 'Brand New' : 'Used'}</div></div>
+      </div>
+      <div class="detail-btns">
+        <button class="btn-primary" data-modal="enquiry" style="text-align:center;">Enquire About This Car</button>
+        <a href="contact.html" class="btn-secondary" style="text-align:center;">Book a Test Drive</a>
+        <a href="https://wa.me/254700000000?text=Hi, I'm interested in the ${encodeURIComponent(car.year + ' ' + car.make + ' ' + car.model)}" class="btn-secondary" style="text-align:center;border-color:rgba(37,211,102,0.4);color:#25D366;" target="_blank">
+          WhatsApp Us
+        </a>
+      </div>
+      <div class="detail-features">
+        <h3>Key Features</h3>
+        <div class="features-list">
+          ${shuffled.map(f => `<span class="feature-tag">${f}</span>`).join('')}
+        </div>
+      </div>
+    </div>`;
+
+  // Related cars
+  const related = carsData.filter(c => c.id !== car.id && (c.type === car.type || Math.abs(c.price - car.price) < 2000000)).slice(0, 3);
+  document.getElementById('relatedGrid').innerHTML = related.map(c => renderCarCard(c, 'car-detail.html')).join('');
+
+  setTimeout(() => { initReveal(); initModal(); }, 100);
+}
+
+loadCarDetail();
+</script>
+</body>
+</html>
